@@ -22,7 +22,7 @@ Final project of module 3 for the **j-squad** group: a Java web application (Ser
 
 ## How to run
 
-Tomcat **9** is required (the code uses the `javax.servlet` API; Tomcat 10+ does not support it).
+Tomcat **11** is required (Jakarta EE 11: the code uses the `jakarta.servlet` API and JSTL 3.0 with the `jakarta.tags.core` taglib URI; Tomcat 9 and older do not support it).
 
 ### Docker (all modules)
 
@@ -35,7 +35,7 @@ Open http://localhost:8080/.
 
 ### Maven + local Tomcat
 
-Requires JDK 17, Maven and Tomcat 9.
+Requires JDK 21+, Maven and Tomcat 11.
 
 ```bash
 mvn clean package
@@ -45,4 +45,4 @@ $CATALINA_HOME/bin/catalina.sh run
 
 ### IntelliJ IDEA
 
-Add a *Tomcat Server → Local* run configuration (Tomcat 9), and on the *Deployment* tab add the `<module>:war exploded` artifact with the context path you need.
+Add a *Tomcat Server → Local* run configuration (Tomcat 11), and on the *Deployment* tab add the `<module>:war exploded` artifact with the context path you need.

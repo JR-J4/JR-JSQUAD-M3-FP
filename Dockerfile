@@ -1,5 +1,5 @@
 # ─── 1) Build stage: compile each module and collect WARs ───
-FROM maven:3.8.3-openjdk-17 AS builder
+FROM maven:3.9-eclipse-temurin-21 AS builder
 WORKDIR /workspace
 
 # 1.1 Copy your full repo
@@ -27,7 +27,7 @@ RUN mkdir -p /artifacts \
  && find . -type f -path "*/target/*.war" -exec cp {} /artifacts/ \;
 
 # ─── 2) Runtime stage: drop all WARs into Tomcat ───
-FROM tomcat:9.0-jdk17
+FROM tomcat:11.0-jdk21
 
 # Clean out any default apps
 RUN rm -rf /usr/local/tomcat/webapps/*

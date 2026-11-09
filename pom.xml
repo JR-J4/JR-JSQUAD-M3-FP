@@ -19,7 +19,7 @@
   <url>http://maven.apache.org</url>
 
   <properties>
-    <java.version>17</java.version>
+    <java.version>21</java.version>
 
     <lombok.version>1.18.36</lombok.version>
     <commons-lang3.version>3.12.0</commons-lang3.version>
@@ -27,8 +27,10 @@
     <mockito-core.version>5.15.2</mockito-core.version>
     <junit-jupiter-engine.version>5.12.0</junit-jupiter-engine.version>
 
-        <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
-        <jstl.version>1.2</jstl.version>
+    <!-- Jakarta EE 11 (Tomcat 11): Servlet 6.1, JSTL 3.0 -->
+    <jakarta.servlet-api.version>6.1.0</jakarta.servlet-api.version>
+    <jakarta.jstl-api.version>3.0.2</jakarta.jstl-api.version>
+    <jakarta.jstl-impl.version>3.0.1</jakarta.jstl-impl.version>
 
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
@@ -59,19 +61,31 @@
       <scope>test</scope>
     </dependency>
 
-    <!-- ✅ Java EE 8 servlet API (works with Tomcat 9) -->
+    <!-- ✅ Jakarta Servlet 6.1 API (provided by Tomcat 11) -->
     <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
-      <version>${javax.servlet-api.version}</version>
+      <groupId>jakarta.servlet</groupId>
+      <artifactId>jakarta.servlet-api</artifactId>
+      <version>${jakarta.servlet-api.version}</version>
       <scope>provided</scope>
     </dependency>
 
-    <!-- ✅ JSTL for JSP (Java EE 8 version) -->
+    <!-- ✅ Jakarta Standard Tag Library (JSTL 3.0) — Tomcat does not ship it -->
     <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>jstl</artifactId>
-      <version>${jstl.version}</version>
+      <groupId>jakarta.servlet.jsp.jstl</groupId>
+      <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+      <version>${jakarta.jstl-api.version}</version>
+      <exclusions>
+        <!-- EL is provided by Tomcat 11 (EL 6.0) -->
+        <exclusion>
+          <groupId>jakarta.el</groupId>
+          <artifactId>jakarta.el-api</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.web</groupId>
+      <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+      <version>${jakarta.jstl-impl.version}</version>
     </dependency>
 
     <!-- ✅ Lombok for boilerplate reduction -->
