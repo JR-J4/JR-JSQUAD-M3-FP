@@ -1,0 +1,258 @@
+:root {
+    --blue: #1e88e5;
+    --blue-dark: #0d2a5c;
+    --blue-light: #e3f2fd;
+    --text: #222;
+    --muted: #777;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: #f4f4f4;
+    line-height: 1.6;
+}
+
+/* ====================== */
+
+.btn {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    border: 0;
+    padding: 12px 28px;
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background: var(--blue-dark);
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.card .actions .btn {
+    margin-top: 0;
+}
+
+.btn-danger {
+    background: #d32f2f;
+}
+
+.btn-danger:hover {
+    background: #b71c1c;
+}
+
+
+.hero {
+    background:
+            linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+            url('../img/hero.jpg')
+            center / cover no-repeat;
+    color: #fff;
+    text-align: center;
+    padding: 140px 20px;
+}
+
+.hero h1 {
+    margin: 0 0 32px;
+    font-size: 44px;
+    font-weight: 300;
+    letter-spacing: 4px;
+}
+
+.story {
+    max-width: 720px;
+    margin: 48px auto;
+    padding: 0 20px;
+}
+
+.story h2 {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.dim {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.welcome-back {
+    background: #e8f5e9;
+    border-left: 4px solid var(--blue);
+    padding: 10px 16px;
+}
+
+.story form {
+    margin-top: 32px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.story input[type=text] {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px;
+    font-size: 15px;
+    border: 1px solid #aaa;
+}
+
+/* game.jsp */
+.card {
+    max-width: 760px;
+    margin: 40px auto;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 28px 32px;
+}
+
+.card h1 {
+    margin-top: 0;
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.option {
+    display: block;
+    margin: 12px 0;
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.option:hover {
+    background: #f1f8f2;
+    border-color: var(--blue);
+}
+
+.card .btn {
+    margin-top: 16px;
+    text-transform: uppercase;
+}
+
+.result {
+    padding: 16px 20px;
+    margin: 0 0 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.result.win {
+    background: #e8f5e9;
+    border-left: 5px solid var(--blue);
+}
+
+.result.lose {
+    background: #fdecea;
+    border-left: 5px solid #f44336;
+}
+
+
+.stats {
+    margin-top: 32px;
+    padding: 4px 20px;
+    background: #e0f7fa;
+    border-left: 5px solid #2196f3;
+}
+
+.stats h3 {
+    margin: 12px 0 6px;
+    font-size: 15px;
+}
+
+.stats p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+/* ====================== */
+
+/* MODAL */
+.modal {
+    border: 0;
+    border-radius: 16px;
+    padding: 36px 40px 32px;
+    width: calc(100% - 32px);
+    max-width: 420px;
+    text-align: center;
+    background: #fff;
+    color: var(--text);
+    box-shadow:
+            0 2px 6px rgba(13, 42, 92, 0.12),
+            0 24px 60px rgba(13, 42, 92, 0.35);
+}
+
+.modal[open] {
+    animation: modal-in 0.25s ease-out;
+}
+
+.modal h2 {
+    margin: 0 0 12px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.modal p {
+    margin: 0 0 28px;
+    color: var(--muted);
+}
+
+.modal strong {
+    display: inline-block;
+    margin-left: 4px;
+    padding: 2px 14px;
+    border-radius: 999px;
+    background: var(--blue-light);
+    color: var(--blue-dark);
+    font-size: 24px;
+}
+
+.modal .btn {
+    border-radius: 999px;
+    padding: 12px 36px;
+}
+
+.modal::backdrop {
+    background: rgba(13, 42, 92, 0.55);
+    backdrop-filter: blur(3px);      /* лёгкое размытие страницы позади */
+}
+
+@keyframes modal-in {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ====================== */
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .card {
+        margin: 16px;
+        padding: 20px;
+    }
+}
