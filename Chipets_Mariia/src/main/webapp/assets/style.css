@@ -1,0 +1,85 @@
+:root {
+    color-scheme: dark;
+    --bg: #050907;
+    --panel: #0b120e;
+    --green: #65ff94;
+    --green-bright: #a2ffb9;
+    --muted: #a0b6a7;
+    --line: #1d5030;
+    --red: #ff7777;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: radial-gradient(ellipse at top, #102219 0, var(--bg) 58%);
+    color: var(--green);
+    font-family: "Fira Code", Consolas, "Courier New", monospace;
+    line-height: 1.7;
+}
+
+.terminal {
+    width: min(100% - 32px, 1040px);
+    margin: 42px auto;
+    border: 1px solid var(--line);
+    background: rgba(5, 9, 7, .94);
+    box-shadow: 0 0 42px rgba(39, 255, 111, .08), inset 0 0 30px rgba(39, 255, 111, .025);
+    padding: clamp(20px, 4vw, 42px);
+}
+
+.terminal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+    font-size: .8rem;
+    letter-spacing: .1em;
+}
+
+.terminal-header a { color: inherit; text-decoration: none; }
+.status { color: var(--green); white-space: nowrap; }
+.hero { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(200px, .8fr); gap: 30px; align-items: center; padding: 32px 0; }
+.hero-image { display: block; width: 100%; max-width: 320px; justify-self: center; border: 1px solid var(--line); background: var(--panel); }
+.eyebrow { color: var(--muted); font-size: .8rem; letter-spacing: .12em; }
+h1 { margin: 0 0 18px; color: var(--green-bright); font-size: clamp(1.5rem, 4vw, 2.4rem); line-height: 1.25; }
+h2 { font-size: 1.15rem; color: var(--green-bright); }
+p { color: #c1d8c8; }
+.panel { border: 1px solid var(--line); background: var(--panel); padding: clamp(18px, 3vw, 28px); margin: 18px 0; }
+.form-row { display: grid; grid-template-columns: 1fr auto; gap: 10px 14px; align-items: center; }
+.form-row label { grid-column: 1 / -1; color: var(--green-bright); }
+input[type="text"] { width: 100%; min-width: 0; padding: 12px 14px; border: 1px solid var(--line); background: #030604; color: var(--green-bright); font: inherit; }
+input:focus-visible, button:focus-visible, a:focus-visible { outline: 2px solid var(--green-bright); outline-offset: 3px; }
+.button { display: inline-block; margin-top: 18px; padding: 12px 18px; border: 1px solid var(--green); background: #12351f; color: var(--green-bright); font: inherit; font-weight: 600; cursor: pointer; text-decoration: none; }
+.button:hover:not(:disabled) { background: #1b4b2b; box-shadow: 0 0 18px rgba(101, 255, 148, .17); }
+.button:disabled { opacity: .45; cursor: not-allowed; }
+.button.secondary { margin: 0; white-space: nowrap; background: transparent; }
+.attempt-count { margin-bottom: 0; color: var(--muted); }
+.hint, .text-link { color: var(--muted); font-size: .86rem; }
+.error, .failure { color: var(--red); }
+.question-panel { margin-top: 36px; }
+.question-prompt { margin: 26px 0; padding-left: 16px; border-left: 2px solid var(--green); color: #d9eee0; }
+.answers { display: grid; gap: 12px; padding: 0; margin: 0; border: 0; }
+.answers legend { margin-bottom: 8px; color: var(--green-bright); }
+.answer-option { display: flex; align-items: flex-start; gap: 12px; padding: 14px; border: 1px solid #23432f; background: #080e0a; cursor: pointer; }
+.answer-option:hover { border-color: var(--green); background: #0d1b12; }
+.answer-option input { margin-top: 7px; accent-color: var(--green); flex: 0 0 auto; }
+.answer-option span { color: #c1d8c8; }
+.success { color: var(--green-bright); }
+.result-details { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 20px; }
+.result-details form { width: 100%; }
+.text-link { margin-top: 10px; }
+
+@media (max-width: 680px) {
+    .terminal { margin: 12px auto; padding: 18px; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-image { max-width: 240px; }
+    .form-row { grid-template-columns: 1fr; }
+    .form-row label { grid-column: auto; }
+    .button.secondary { justify-self: start; }
+    .terminal-header { font-size: .68rem; }
+}
