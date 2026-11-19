@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440" role="img" aria-labelledby="title desc">
+  <title id="title">Технічна співбесіда</title><desc id="desc">Зелений термінал, чашка кави та вікно відеодзвінка</desc>
+  <rect width="640" height="440" fill="#07100a"/>
+  <rect x="34" y="36" width="572" height="368" rx="12" fill="#0b1710" stroke="#2c8a4c" stroke-width="3"/>
+  <path d="M34 80h572" stroke="#2c8a4c" stroke-width="2"/>
+  <circle cx="62" cy="58" r="7" fill="#ff7777"/><circle cx="86" cy="58" r="7" fill="#ffd166"/><circle cx="110" cy="58" r="7" fill="#65ff94"/>
+  <rect x="68" y="112" width="260" height="244" rx="8" fill="#050907" stroke="#1d5030" stroke-width="2"/>
+  <path d="M94 151h166M94 180h202M94 209h142M94 267h176M94 296h126" stroke="#65ff94" stroke-width="5" stroke-linecap="round" opacity=".85"/>
+  <path d="M94 238h87" stroke="#62b8ff" stroke-width="5" stroke-linecap="round"/>
+  <rect x="365" y="112" width="198" height="143" rx="8" fill="#102219" stroke="#1d5030" stroke-width="2"/>
+  <circle cx="464" cy="161" r="33" fill="#b7845a"/><path d="M431 157q5-39 38-34 27 3 31 34l-14-12-43 4z" fill="#26352b"/>
+  <path d="M409 231q9-44 55-44t55 44" fill="#485b4b"/><rect x="414" y="199" width="99" height="46" rx="15" fill="#657663"/>
+  <path d="M390 286h124v60H390z" fill="#1c2d22" stroke="#65ff94" stroke-width="2"/><path d="M514 300h14q18 0 18 16t-18 16h-14" fill="none" stroke="#65ff94" stroke-width="5"/><path d="M411 300h83" stroke="#65ff94" stroke-width="4" opacity=".7"/>
+  <text x="389" y="379" fill="#65ff94" font-family="monospace" font-size="17">СПІВБЕСІДА ТРИВАЄ</text>
+</svg>

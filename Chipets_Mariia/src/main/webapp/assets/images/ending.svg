@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440" role="img" aria-labelledby="title desc">
+  <title id="title">Результат співбесіди</title><desc id="desc">Термінальне вікно з фінальним статусом</desc>
+  <rect width="640" height="440" fill="#07100a"/>
+  <rect x="35" y="42" width="570" height="356" rx="12" fill="#0b1710" stroke="#2c8a4c" stroke-width="3"/>
+  <path d="M35 87h570" stroke="#2c8a4c" stroke-width="2"/>
+  <circle cx="63" cy="64" r="7" fill="#ff7777"/><circle cx="87" cy="64" r="7" fill="#ffd166"/><circle cx="111" cy="64" r="7" fill="#65ff94"/>
+  <path d="M102 161h436M102 203h320M102 245h382" stroke="#1d5030" stroke-width="3"/>
+  <rect x="104" y="282" width="432" height="67" rx="7" fill="#07120b" stroke="#65ff94" stroke-width="2"/>
+  <path d="m132 315 17 17 36-39" fill="none" stroke="#65ff94" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="208" y="326" fill="#a2ffb9" font-family="monospace" font-size="22">СПІВБЕСІДУ ЗАВЕРШЕНО</text>
+  <text x="104" y="129" fill="#65ff94" font-family="monospace" font-size="19">&gt; ОЦІНКА СПІВБЕСІДИ: ФІНАЛЬНИЙ СТАТУС</text>
+</svg>

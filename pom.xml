@@ -12,6 +12,7 @@
   <modules>
     <module>Example</module>
     <module>Homepage</module>
+    <module>Chipets_Mariia</module>
   </modules>
 
   <version>1.0</version>
